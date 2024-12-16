@@ -1,0 +1,70 @@
+html, body {
+    height: 100%;
+    background-image: linear-gradient(90deg, #fdfbfb 0%, #ebedee 100%);
+}
+
+h1 {
+    color: cornsilk;
+}
+
+h2 {
+    text-decoration: underline;
+    font-style: normal;
+}
+
+.dotted {
+    border-radius: 10px;
+    background-color: #FFF;
+    box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.75);
+}
+
+.label {
+    background-color: rgba(36, 121, 165, .85);
+    color: #FFF;
+    font-style: italic;
+    border-radius: 5px;
+    box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 40px 0px rgba(0, 0, 0, 0.75);
+}
+
+.bg-manu {
+    background-image: url(../img/lamanu.jpg);
+    background-size: cover;
+    background-position: center center;
+    height: 40%;
+}
+
+.alert-transparent {
+    background-color: rgba(0, 0, 0, .5);
+    border-color: #c3e6cb;
+    height: 100%;
+}
+
+
+
+.text {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
+    overflow: hidden;
+    text-align: justify;
+    font-size: .8em;
+}
+
+h5 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+
+#filmTable {
+    background-color: #EEE;
+}
+
+.fa-star {
+    color: darkorange
+}

@@ -27,7 +27,7 @@ body {
 }
 .buttonstock{
     display: flex;
-    height: 30vh;
+    height: 20vh;
     gap: 6vh;
     flex-wrap: wrap;
     align-items: start;
@@ -47,4 +47,15 @@ body {
     cursor: pointer;
     outline: none;
     transition: background-color 0.3s ease;
+}
+
+.cardstock {
+    display: flex;
+    width: 100%;
+}
+.card {
+    height: 65vh;
+    background-image: url(../img/NVKZ5\ \(1\).webp);
+    width: 50vh;
+    background-repeat: no-repeat;
 }

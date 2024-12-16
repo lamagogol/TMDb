@@ -1,3 +1,7 @@
+body {
+    margin: 0;
+    padding: 0;
+}
 header {
     background-color:#2D2A2A;
     height: 10vh;
@@ -24,12 +28,23 @@ header {
     background-color: #333;
     overflow: hidden;
     white-space: nowrap;
+    width: 100%;
 }
 .scrollItem {
-    width: 200px;
+    height: 65vh;
+    width: calc(65vh*210/297);
     display: inline-block;
-    color: white;
-    text-align: center;
-    padding: 14px;
-    text-decoration: none;
+    background-image: url(../img/NVKZ5_1.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+/* .cardstock {
+    display: flex;
+    width: 100%;
+}
+.card {
+    height: 65vh;
+    background-image: url(../img/NVKZ5\ (1).webp);
+    width: 50vh;
+    background-repeat: no-repeat;
+} */

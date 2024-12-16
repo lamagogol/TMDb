@@ -1,0 +1,22 @@
+header {
+    background-color:#2D2A2A;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo {
+    width: 35%;
+    height: 50%;
+    padding-right: 10vh;
+}
+.search {
+    border-radius: 5vh;
+    height: 4vh;
+    width: 50vh;
+}
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

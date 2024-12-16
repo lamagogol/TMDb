@@ -20,3 +20,16 @@ header {
     align-items: center;
     justify-content: center;
 }
+.scrollContainer {
+    background-color: #333;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.scrollItem {
+    width: 200px;
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+}

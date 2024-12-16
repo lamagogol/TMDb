@@ -28,11 +28,11 @@ body {
 .buttonstock{
     display: flex;
     height: 30vh;
-    gap:15vh;
+    gap: 6vh;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: start;
     justify-content: center;
-    padding-top: 10vh;
+    padding-top: 5vh;
 }
 .buttonstock button:hover {
     background-color: #db6723; 
@@ -41,7 +41,7 @@ body {
     background-color: #D9D9D9; 
     border: none;
     border-radius: 25px; 
-    padding: 10px 30px; 
+    padding: 1vh 3vh; 
     font-size: 16px;
     color: black; 
     cursor: pointer;

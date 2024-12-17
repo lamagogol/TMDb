@@ -29,7 +29,7 @@ fetch(url, options).then((response)=>{
             let k=document.querySelector("."+element.name.split(' ').join(''))
             k.addEventListener("click", function(){
                 scrollContainer.innerHTML = ""
-                imagesButtonChange(String(element.name.split(" ").join("")))
+                imagesButtonChange("genre",element.id)
             })
         }
     });
@@ -77,7 +77,7 @@ newest.addEventListener("click", function(){
 //     imagesButtonChange("Western")
 // });
 
-function imagesButtonChange(type, genre=""){
+function imagesButtonChange(type, genreId=""){
     console.log(type)
     if (type==="popular"){
         callAPI('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc');
@@ -85,30 +85,33 @@ function imagesButtonChange(type, genre=""){
     else if (type==="newest"){
         callAPI('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=primary_release_date.desc');
     }
-    else if (type==="Action"){
-        callAPI('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&with_genres=28');
+    else if (type==="genre"){
+        callAPI('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&with_genres='+String(genreId))
     }
-    else if (type==="Animation"){
-        callAPI('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&with_genres=16');
-    }
-    else if (type==="Documentary"){
-        callAPI('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&with_genres=99');
-    }
-    else if (type==="History"){
-        callAPI('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&with_genres=36');
-    }
-    else if (type==="Horror"){
-        callAPI('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&with_genres=27');
-    }
-    else if (type==="Science Fiction"){
-        callAPI('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&with_genres=878');
-    }
-    else if (type==="War"){
-        callAPI('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&with_genres=10752');
-    }
-    else if (type==="Western"){
-        callAPI('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&with_genres=37');
-    }
+    // else if (type==="Action"){
+    //     callAPI('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&with_genres=28');
+    // }
+    // else if (type==="Animation"){
+    //     callAPI('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&with_genres=16');
+    // }
+    // else if (type==="Documentary"){
+    //     callAPI('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&with_genres=99');
+    // }
+    // else if (type==="History"){
+    //     callAPI('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&with_genres=36');
+    // }
+    // else if (type==="Horror"){
+    //     callAPI('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&with_genres=27');
+    // }
+    // else if (type==="Science Fiction"){
+    //     callAPI('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&with_genres=878');
+    // }
+    // else if (type==="War"){
+    //     callAPI('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&with_genres=10752');
+    // }
+    // else if (type==="Western"){
+    //     callAPI('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&with_genres=37');
+    // }
 };
 
 function callAPI(siteUrl){

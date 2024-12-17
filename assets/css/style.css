@@ -1,13 +1,15 @@
 body {
     margin: 0;
     padding: 0;
+    background-color:#2D2A2A;
 }
 header {
-    background-color:#2D2A2A;
+    background-color:#121111;
     height: 10vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-bottom: solid #ffffff 1px;
 }
 .logo {
     width: 35%;
@@ -25,12 +27,13 @@ header {
     justify-content: center;
 }
 .scrollContainer {
-    background-color: #333;
     overflow: hidden;
     white-space: nowrap;
     width: 100%;
 }
 .scrollItem {
+    margin-left: 1.5vw;
+    margin-right: 1.5vw;
     height: 65vh;
     width: calc(65vh*210/297);
     display: inline-block;
@@ -48,3 +51,27 @@ header {
     width: 50vh;
     background-repeat: no-repeat;
 } */
+
+.buttonstock{
+    display: flex;
+    height: 20vh;
+    gap: 6vh;
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: center;
+    padding-top: 5vh;
+}
+.buttonstock button:hover {
+    background-color: #db6723; 
+}
+.buttonstock button{
+    background-color: #D9D9D9; 
+    border: none;
+    border-radius: 25px; 
+    padding: 1vh 3vh; 
+    font-size: 16px;
+    color: black; 
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease;
+}

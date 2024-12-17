@@ -31,26 +31,21 @@ header {
     white-space: nowrap;
     width: 100%;
 }
-.scrollItem {
+.scrollContainer img {
     margin-left: 1.5vw;
     margin-right: 1.5vw;
     height: 65vh;
     width: calc(65vh*210/297);
     display: inline-block;
-    background-image: url(../img/NVKZ5_1.webp);
     background-repeat: no-repeat;
     background-size: cover;
 }
-/* .cardstock {
-    display: flex;
-    width: 100%;
+
+.scrollContainer img:hover {
+    transform: scale(1.2); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    cursor: pointer;
 }
-.card {
-    height: 65vh;
-    background-image: url(../img/NVKZ5\ (1).webp);
-    width: 50vh;
-    background-repeat: no-repeat;
-} */
 
 .buttonstock{
     display: flex;

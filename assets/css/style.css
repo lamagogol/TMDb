@@ -1,36 +1,42 @@
 body {
     margin: 0;
     padding: 0;
-    background-color:#2D2A2A;
+    background-color: #2D2A2A;
 }
+
 header {
-    background-color:#121111;
+    background-color: #121111;
     height: 10vh;
     display: flex;
     align-items: center;
     justify-content: center;
     border-bottom: solid #ffffff 1px;
 }
+
 .logo {
     width: 35%;
     height: 50%;
     padding-right: 10vh;
 }
+
 .search {
     border-radius: 5vh;
     height: 4vh;
     width: 50vh;
 }
+
 .head {
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 .scrollContainer {
     overflow: hidden;
     white-space: nowrap;
     width: 100%;
 }
+
 .scrollContainer img {
     margin-left: 1.5vw;
     margin-right: 1.5vw;
@@ -47,19 +53,19 @@ header {
     cursor: pointer;
 }
 
-.buttonstock{
+.buttonStock{
     display: flex;
-    height: 20vh;
+    height: 10vh;
     gap: 6vh;
     flex-wrap: wrap;
     align-items: start;
     justify-content: center;
     padding-top: 5vh;
 }
-.buttonstock button:hover {
+.buttonStock button:hover {
     background-color: #db6723; 
 }
-.buttonstock button{
+.buttonStock button{
     background-color: #D9D9D9; 
     border: none;
     border-radius: 25px; 
@@ -69,4 +75,25 @@ header {
     cursor: pointer;
     outline: none;
     transition: background-color 0.3s ease;
+}
+
+footer {
+    background-color: #000000;
+    height: 10vh;
+    border-top: solid white 3px;
+    color: white;
+}
+
+.foot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25vh;
+    height: 10vh;
+}
+
+.foot a {
+    font-size: large;
+    color: white;
+    text-decoration: none;
 }

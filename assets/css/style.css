@@ -48,12 +48,12 @@ header {
 }
 
 .scrollContainer img:hover {
-    transform: scale(1.2); 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transform: scale(1.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
 }
 
-.buttonStock{
+.buttonStock {
     display: flex;
     height: 10vh;
     gap: 6vh;
@@ -62,16 +62,18 @@ header {
     justify-content: center;
     padding-top: 5vh;
 }
+
 .buttonStock button:hover {
-    background-color: #db6723; 
+    background-color: #db6723;
 }
-.buttonStock button{
-    background-color: #D9D9D9; 
+
+.buttonStock button {
+    background-color: #D9D9D9;
     border: none;
-    border-radius: 25px; 
-    padding: 1vh 3vh; 
+    border-radius: 25px;
+    padding: 1vh 3vh;
     font-size: 16px;
-    color: black; 
+    color: black;
     cursor: pointer;
     outline: none;
     transition: background-color 0.3s ease;

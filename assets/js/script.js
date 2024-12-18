@@ -110,7 +110,6 @@ search.addEventListener("input", research)
 function research(e) {
     let query = e.target.value
     const searchUrl = `https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(query)}&include_adult=false&language=en-US&page=1`;
-
     fetch(searchUrl, {
         method: 'GET',
         headers: {
@@ -118,27 +117,27 @@ function research(e) {
             Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1ODc0M2Y4NGRhYzAwNDBlZjEyNjgwMjMzZWU5NmEwZiIsIm5iZiI6MTczNDM0NDk4NC44MTUsInN1YiI6IjY3NjAwMTE4NWJkM2M3MmE4MmMxYzNiYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ._wZmMme3uyW9tlwonW8YiyvgMC7zZTBAn4VG7ESRAWo'
         }
     }).then((res) => res.json())
-        .then((data) => {
-            let main = document.querySelector(".main");
-            resultContainer.innerHTML = "";
-            main.style.display = "none";
-            resultContainer.style.display = "flex";
-            data.results.forEach(movie => {
-                console.log(movie);
-                let path = movie.poster_path
-                let images = document.createElement('img')
-                images.src = `https://images.tmdb.org/t/p/w500/${path}`;
-                resultContainer.appendChild(images);
-            })
-            if (query === "") {
-                main.style.display = "block";
-                resultContainer.style.display = "none"
-                resultContainer.innerHTML = "";
-                return;
-            }
-            resultContainer.addEventListener("wheel", (evt) => {
-                evt.preventDefault();
-                resultContainer.scrollLeft += evt.deltaY;
-            });
+    .then((data) => {
+        let main = document.querySelector(".main");
+        resultContainer.innerHTML = "";
+        main.style.display = "none";
+        resultContainer.style.display = "flex";
+        data.results.forEach(movie => {
+            console.log(movie);
+            let path = movie.poster_path
+            let images = document.createElement('img')
+            images.src = `https://images.tmdb.org/t/p/w500/${path}`;
+            resultContainer.appendChild(images);
         })
+        if (query === "") {
+            main.style.display = "block";
+            resultContainer.style.display = "none"
+            resultContainer.innerHTML = "";
+            return;
+        }
+        resultContainer.addEventListener("wheel", (evt) => {
+            evt.preventDefault();
+            resultContainer.scrollLeft += evt.deltaY;
+        });
+    })
 }

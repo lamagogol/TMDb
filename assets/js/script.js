@@ -124,7 +124,7 @@ function research(e) {
         main.style.display = "none";
         resultContainer.style.display = "flex";
         data.results.forEach(movie => {
-            if (element.poster_path != null) {
+            if (movie.poster_path != null) {
                 console.log(movie);
                 let path = movie.poster_path
                 let images = document.createElement('img')

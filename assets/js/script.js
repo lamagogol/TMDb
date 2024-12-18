@@ -49,7 +49,6 @@ newest.addEventListener("click", function () {
 })
 
 function imagesButtonChange(type, genreId = "") {
-    console.log(type)
     if (type === "popular") {
         callAPI('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc');
     }
@@ -57,11 +56,11 @@ function imagesButtonChange(type, genreId = "") {
         callAPI('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=primary_release_date.desc');
     }
     else if (type === "genre") {
-        callAPI('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&with_genres=' + String(genreId))
+        callAPI('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&with_genres=' + String(genreId), genreId)
     }
 };
 
-function callAPI(siteUrl) {
+function callAPI(siteUrl, genreId) {
     const url = siteUrl;
     const options = {
         method: 'GET',
@@ -75,12 +74,33 @@ function callAPI(siteUrl) {
     }).then(data => {
         data.results.forEach(element => {
             if (element.poster_path != null) {
-                let title = element.original_title;
+                let id = element.id;
                 let poster = element.poster_path;
                 let images = document.createElement("img");
                 images.src = `https://images.tmdb.org/t/p/w500/${poster}`;
+                images.classList.add(String(id));
+                console.log(id)
                 scrollContainer.appendChild(images);
+                images.addEventListener("click", function () {
+                    openPage(id)
+                })
             }
         });
+    });
+};
+function openPage(id) {
+    const url = 'https://api.themoviedb.org/3/movie/' + id + '?language=en-US';
+    console.log(url)
+    const options = {
+        method: 'GET',
+        headers: {
+            accept: 'application/json',
+            Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1ODc0M2Y4NGRhYzAwNDBlZjEyNjgwMjMzZWU5NmEwZiIsIm5iZiI6MTczNDM0NDk4NC44MTUsInN1YiI6IjY3NjAwMTE4NWJkM2M3MmE4MmMxYzNiYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ._wZmMme3uyW9tlwonW8YiyvgMC7zZTBAn4VG7ESRAWo'
+        }
+    };
+    fetch(url, options).then((response) => {
+        return response.json();
+    }).then(data => {
+        window.open(data.homepage, "_blank");
     });
 };
